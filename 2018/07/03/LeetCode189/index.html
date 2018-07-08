@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="cpy.website">
-  <title>LeetCode 189.Rotate Array 旋转数组 | 木木的博客</title>
+  <title>LeetCode 189.Rotate Array 旋转数组 | Nothone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="没什么用的前言仅用于个人记录自己的解题思路，按照我的智商应该是傻子也能看懂 唠叨，思路有时候格外清奇，绝大部分都不是最优解，没什么参考价值 金鱼脑的自我拯救  题目原题链接 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。 说明:  尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。 要求使用空间复杂度为 O(1) 的原地算法。  例子： 123456输入: [">
-<meta name="keywords" content="解题,LeetCode Easy,java">
+<meta name="keywords" content="解题,java,LeetCode Easy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 189.Rotate Array 旋转数组">
 <meta property="og:url" content="cpy.website/2018/07/03/LeetCode189/index.html">
-<meta property="og:site_name" content="木木的博客">
+<meta property="og:site_name" content="Nothone">
 <meta property="og:description" content="没什么用的前言仅用于个人记录自己的解题思路，按照我的智商应该是傻子也能看懂 唠叨，思路有时候格外清奇，绝大部分都不是最优解，没什么参考价值 金鱼脑的自我拯救  题目原题链接 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。 说明:  尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。 要求使用空间复杂度为 O(1) 的原地算法。  例子： 123456输入: [">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-04T06:21:46.024Z">
+<meta property="og:updated_time" content="2018-07-08T21:40:38.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode 189.Rotate Array 旋转数组">
 <meta name="twitter:description" content="没什么用的前言仅用于个人记录自己的解题思路，按照我的智商应该是傻子也能看懂 唠叨，思路有时候格外清奇，绝大部分都不是最优解，没什么参考价值 金鱼脑的自我拯救  题目原题链接 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。 说明:  尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。 要求使用空间复杂度为 O(1) 的原地算法。  例子： 123456输入: [">
   
-    <link rel="alternative" href="/atom.xml" title="木木的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Nothone" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -249,11 +249,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode Easy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode Easy</a>
         		</li>
       		
 		</ul>
@@ -359,6 +359,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#没什么用的前言"><span class="toc-number">1.</span> <span class="toc-text">没什么用的前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">2.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">3.</span> <span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、最简单的方法：模拟旋转过程"><span class="toc-number">3.1.</span> <span class="toc-text">一、最简单的方法：模拟旋转过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、改进：只旋转一次"><span class="toc-number">3.2.</span> <span class="toc-text">二、改进：只旋转一次</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、反转法"><span class="toc-number">3.3.</span> <span class="toc-text">三、反转法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#思路："><span class="toc-number">3.3.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过程分析："><span class="toc-number">3.3.2.</span> <span class="toc-text">过程分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#具体代码："><span class="toc-number">4.</span> <span class="toc-text">具体代码：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -466,11 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode Easy</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode Easy</a>
               </li>
             
             <div class="clearfix"></div>
